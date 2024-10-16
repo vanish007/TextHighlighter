@@ -1,0 +1,17 @@
+<plugin xmlns="http://www.intellij.org/PPI/14.0"
+        id="com.example.highlighter"
+        name="Highlighter"
+        version="1.0"
+        description="Highlight selected text in red">
+
+    <actions>
+        <action id="Highlighter"
+                class="com.example.Highlighter"
+                text="Highlight Selected Text"
+                description="Highlight selected text in red">
+            <keyboard-shortcut key="alt H" />
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+    </actions>
+
+</plugin>
