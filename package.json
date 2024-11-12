@@ -1,0 +1,78 @@
+{
+  "name": "texthighlighter",
+  "displayName": "TextHighlighter",
+  "description": "Allows user to change the color of the selected text",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.2"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:texthighlighter.colorPalette",
+    "onCommand:texthighlighter.setColorFromSelection",
+    "onCommand:texthighlighter.highlight",
+    "onCommand:texthighlighter.clear"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "texthighlighter.colorPicker",
+        "title": "Выбрать цвет для выделения"
+      },
+      {
+        "command": "texthighlighter.highlight",
+        "title": "Выделить выбранным цветом"
+      },
+      {
+        "command": "texthighlighter.clear",
+        "title": "Очистить все выделения"
+      },
+      {
+        "command": "texthighlighter.setColorFromSelection",
+        "title": "Установить цвет из выделенного текста"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "texthighlighter.colorPicker",
+        "key": "ctrl+alt+p",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "texthighlighter.highlight",
+        "key": "ctrl+alt+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "texthighlighter.clear",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "texthighlighter.setColorFromSelection",
+        "key": "ctrl+alt+s",
+        "when": "editorTextFocus"
+      }
+    ]
+  },  
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
